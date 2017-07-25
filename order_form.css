@@ -1,4 +1,84 @@
+* {
+  font-size: "18px";
+  font-family: optima;
+}
+
 h1 {
-    color: darkmagenta;
-    font-family: "Brush Script MT", cursive;
+  color: darkmagenta;
+  font-family: Papyrus, cursive;
+  text-align: center;
+}
+
+h2 {
+  padding-left: 28px;
+}
+
+label {
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 250px;
+  text-align: right;
+}
+
+input, p, textarea {
+  display: inline-block;
+  float: left;
+}
+
+.error {
+  color: mediumvioletred;
+  padding-left: 10px;
+}
+
+input[type=text], [type=tel], select, textarea {
+  padding: 12px 12px;
+  border-color: dimgrey;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+input[type=submit] {
+  width: 60%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input {
+  margin-bottom:16px;
+}
+
+/*
+label { 
+    float: left; width: 10em; 
+    margin-right: 1em; 
+    text-align: right; 
+}
+*/
+
+label {
+  width:180px;
+  clear:left;
+  text-align:right;
+  padding-right:10px;
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+input, label {
+  float:left;
+}
+
+input[type=text], [type=tel], .other_field {
+  width: 20%;
 }
