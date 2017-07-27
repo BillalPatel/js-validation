@@ -3,28 +3,67 @@
   font-family: optima;
 }
 
-h1 {
+body {
+    align-content: center;
+}
+
+h1, h2{
   color: darkmagenta;
   font-family: Papyrus, cursive;
-  text-align: center;
+  display: block;
+  position: center;
 }
 
-h2 {
-  padding-left: 28px;
+form {
+    display: block;
+/*    text-align: left;    */
 }
 
+/*
 label {
   display: inline-block;
-  float: left;
-  clear: left;
+  float: right;
   width: 250px;
   text-align: right;
 }
+*/
 
+label {
+  clear: left;
+  width: 180px;
+  clear: left;
+  text-align: right;
+  padding-right: 10px;
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+/*#product_list {*/
+/*    */
+/*}*/
+
+label { 
+    float: left; width: 5em; 
+    margin-right: 1em; 
+    text-align: right; 
+}
+
+
+input, label {
+  float:left;
+}
+
+input[type=text], [type=tel] {
+  width: 20%;
+}
+
+
+/*
 input, p, textarea {
   display: inline-block;
   float: left;
 }
+*/
 
 .error {
   color: mediumvioletred;
@@ -34,8 +73,12 @@ input, p, textarea {
 input[type=text], [type=tel], select, textarea {
   padding: 12px 12px;
   border-color: dimgrey;
-  border-radius: 6px;
+  border-radius: 5px;
   font-size: 14px;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
 }
 
 input[type=submit] {
@@ -50,35 +93,6 @@ input[type=submit] {
   font-size: 18px;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
 input {
   margin-bottom:16px;
-}
-
-/*
-label { 
-    float: left; width: 10em; 
-    margin-right: 1em; 
-    text-align: right; 
-}
-*/
-
-label {
-  width:180px;
-  clear:left;
-  text-align:right;
-  padding-right:10px;
-  padding-top: 10px;
-  font-size: 18px;
-}
-
-input, label {
-  float:left;
-}
-
-input[type=text], [type=tel], .other_field {
-  width: 20%;
 }

@@ -1,28 +1,33 @@
 <!DOCTYPE html>
-<html>
+`<html>
     <head>
         <title>myInspirations Order Form</title>
         <meta name="description" content="Order Form">
-        <link rel="stylesheet" href="main.css">
         <script src="validation.js"></script>
-        <link rel="stylesheet" type="text/css" href="order_form.css">
+<!--        <link rel="stylesheet" type="text/css" href="order_form.css">-->
     </head>
     <body>
         <img src="flower_logo.png" alt="Logo" style="width:250px; height:110px;">
         <h1 id="mainheading">Order Form</h1>
-        <h2 id="subheading">Please enter customer's order details below</h2>
+        <h2 id="subheading">Please enter your order details</h2>
         <div>
           <form action="/example.js">
-            <label>Name:</label><input type="text" placeholder="Mo Bloggs" id="name" onfocus=verifyNameOnFocus() onblur="verifyNameOnBlur()">
-              <p class="error" id="name_error" style="visibility: hidden">Name field cannot be left empty</p>
             
-            <label>Telephone:</label><input type="tel" placeholder="e.g. 07500 111 222" id="telephone" onfocus=verifyTelephoneOnFocus() onblur="verifyTelephoneOnBlur()">
+              <div id="parent-id">
+                  <label>Name:</label><input type="text" placeholder="Mo Bloggs" id="name" onblur="verifyFieldOnBlur(this)">
+                    <p class="error" style="visibility:hidden">Error placeholder for name field</p>
+              </div>
+            
+              <div
+            <label>Telephone:</label><input type="tel" placeholder="e.g. 07500 111 222" id="telephone" onfocus="verifyTelephoneOnFocus()" onblur="verifyTelephoneOnBlur()">
               <p class="error" id="telephone_error" style="visibility: hidden">Telephone field cannot be left empty</p>
+        </div>
             
-            <label>E-mail:</label><input type="text" placeholder="name@example.com" id="email" onfocus=verifyEmailOnFocus() onblur="verifyEmailOnBlur()">
+            <label>E-mail:</label><input type="text" placeholder="name@example.com" id="email" onfocus="verifyEmailOnFocus()" onblur="verifyEmailOnBlur()">
               <p class="error" id="email_error" style="visibility: hidden">Email field cannot be left empty</p>
             
             <label>House Name/Number:</label> <input type="text" id="house_name">
+              
               
             <label>First Line of Address:</label><input type="text" id="first_address">
               

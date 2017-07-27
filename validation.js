@@ -9,11 +9,6 @@ function formValidation() {
 //        name.style.visibility = "visible";
 //    }
     
-    var nameRegExp = /^[a-zA-Z]+$/;
-    if (!nameRegExp.test(name)) {
-        alert("Only letters are accepted within the name field");
-    }
-    
     var telephone = document.getElementById("telephone").value;
     if (telephone == "") {
         alert(telEmptyError);
@@ -52,21 +47,38 @@ function formValidation() {
     UPDATE REGEXS
 */
 
-function verifyNameOnBlur() {
-    var name = document.getElementById("name").value;
-    var nameError = document.getElementById("name_error");
-    if (name == "") {
-        nameError.style.visibility = "visible";
-    } else if (/^[a-zA-Z]+$/.test(name)){
-        nameError.style.visibility = "hidden";
-    }
-}
+//function verifyNameOnBlur() {
+//    var name = document.getElementById("name").value;
+//    var nameEmptyError = document.getElementById("name_empty_error");
+//    var nameRegEx = /^[a-zA-Z]+$/;
+//    var nameRegexError = document.getElementById("name_regex_error");
+//    
+//    if (name == "") {
+//        nameEmptyError.style.visibility = "visible";
+//        nameRegexError.style.visibility = "hidden";
+//    } else if (/^[a-zA-Z]+$/.test(name)){
+//        nameEmptyError.style.visibility = "hidden";
+//    } else if (!nameRegEx.test(name)) {
+//        nameRegexError.style.visibility = "visible";
+//        nameEmptyError.style.visibility = "hidden";
+//    }         
+//}
 
-function verifyNameOnFocus() {
+
+function verifyFieldOnBlur() {
     var name = document.getElementById("name").value;
-    var nameError = document.getElementById("name_error");
-    if (/^[a-zA-Z]+$/.test(name)){
-        nameError.style.visibility = "hidden";
+    var getParentDiv = document.getElementById("parent-id");
+    var pTag = getParentDiv.getElementsByTagName("P");
+    var nameRegEx = /^[a-zA-Z\s]*$/;
+    
+    if (name == "" || name.trim().length == 0) {
+        pTag[0].style.visibility = "visible";
+        pTag[0].innerHTML = "Name field cannot be left empty.";
+    } else if (!nameRegEx.test(name)) {
+        pTag[0].style.visibility = "visible";
+        pTag[0].innerHTML = "Only letters are accepted within the name field.";
+    } else if (nameRegEx.test(name)) {
+        pTag[0].style.visibility = "hidden";
     }
 }
 
