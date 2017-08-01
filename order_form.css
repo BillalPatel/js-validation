@@ -1,98 +1,140 @@
 * {
-  font-size: "18px";
-  font-family: optima;
-}
-
-body {
-    align-content: center;
-}
-
-h1, h2{
-  color: darkmagenta;
-  font-family: Papyrus, cursive;
-  display: block;
-  position: center;
-}
-
-form {
-    display: block;
-/*    text-align: left;    */
+    font-size: "18px";
+    font-family: optima;
+/*    padding: 30px 30px;*/
 }
 
 /*
-label {
-  display: inline-block;
-  float: right;
-  width: 250px;
-  text-align: right;
+html { 
+    height: 100%;
+    margin:0px;
+    background: url("paint-palette.jpeg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+*/
+/*
+
+body  {
+    background-image: url("paint-palette.jpeg");
+background:rgb(37, 16, 13) url("paint-palette.jpeg");
+background-repeat: no-repeat;
+width: 100%;
+height:100%;
+background-position: center center;
+text-align:center;
+margin:auto;
+padding:0;
+
+    
 }
 */
 
-label {
-  clear: left;
-  width: 180px;
-  clear: left;
-  text-align: right;
-  padding-right: 10px;
-  padding-top: 10px;
-  font-size: 18px;
+label{
+    display: inline-block;
+    float: inherit;
+/*    clear: left;*/
+    width: 250px;
+    text-align: right;
 }
 
-/*#product_list {*/
-/*    */
+
+/*input {*/
+/*  display: inline-block;*/
+/*  float: left;*/
 /*}*/
 
-label { 
-    float: left; width: 5em; 
-    margin-right: 1em; 
-    text-align: right; 
+h1, h2 {
+    color: darkmagenta;
+/*    font-family: Papyrus, cursive;*/
+    text-align: center;
 }
 
-
-input, label {
-  float:left;
+#parent-div {
+    text-align: center;
 }
-
-input[type=text], [type=tel] {
-  width: 20%;
-}
-
 
 /*
-input, p, textarea {
-  display: inline-block;
-  float: left;
+form {
+    text-align: center;
 }
 */
 
-.error {
-  color: mediumvioletred;
-  padding-left: 10px;
+/*
+input, option {
+    
+}
+*/
+
+label {
+    clear: left;
+    width: 180px;
+    clear: left;
+    text-align: right;
+    padding-right: 25px;
+    padding-top: 10px;
+    font-size: 18px;
 }
 
-input[type=text], [type=tel], select, textarea {
-  padding: 12px 12px;
-  border-color: dimgrey;
-  border-radius: 5px;
-  font-size: 14px;
+/*
+form { 
+    text-align: left; display: inline-block; padding: 20px; width: auto;  background: #FAFAFA;
+}
+*/
+
+/*
+p {
+    margin-top: 1em;
+    margin-bottom: 0em;
+    position: sticky;
+    display: grid;
+}
+*/
+
+/*
+form {
+    display: block;
+        text-align: left;    
+}
+*/
+
+input[type=text],
+[type=tel] {
+    width: 20%;
+}
+
+.required-error {
+    color: mediumvioletred;
+    padding-left: 10px;
+}
+
+input[type=text],
+[type=tel],
+select,
+textarea {
+    padding: 12px 12px;
+    border-color: dimgrey;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+    background-color: #45a049;
 }
 
 input[type=submit] {
-  width: 60%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 18px;
+    width: 60%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
 }
 
+/*
 input {
-  margin-bottom:16px;
-}
+    margin-bottom: 5px;
+}*/
