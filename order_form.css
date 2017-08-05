@@ -1,140 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 * {
-    font-size: "18px";
-    font-family: optima;
-/*    padding: 30px 30px;*/
+    box-sizing: border-box;
 }
 
-/*
-html { 
-    height: 100%;
-    margin:0px;
-    background: url("paint-palette.jpeg") no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-*/
-/*
-
-body  {
-    background-image: url("paint-palette.jpeg");
-background:rgb(37, 16, 13) url("paint-palette.jpeg");
-background-repeat: no-repeat;
-width: 100%;
-height:100%;
-background-position: center center;
-text-align:center;
-margin:auto;
-padding:0;
-
-    
-}
-*/
-
-label{
-    display: inline-block;
-    float: inherit;
-/*    clear: left;*/
-    width: 250px;
-    text-align: right;
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+/*    background: linear-gradient(#e6e6e6, #bb6b70);*/
+    background: #FFFAF0;
+    margin: 0;
+    padding: 20px;
 }
 
-
-/*input {*/
-/*  display: inline-block;*/
-/*  float: left;*/
-/*}*/
-
-h1, h2 {
-    color: darkmagenta;
-/*    font-family: Papyrus, cursive;*/
-    text-align: center;
+/* scrolling bar styling  */
+body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
 }
+
+body::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	background-color: #790e10;
+}
+/*  -----------------------------------------  */
+
 
 #parent-div {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
     text-align: center;
+    overflow: auto;
+}
+ /* add id to image in case you ass more images to the page  */
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 180px;
 }
 
-/*
-form {
-    text-align: center;
+h1, h2 {
+    color: #790e10;
 }
-*/
 
-/*
-input, option {
-    
+/* **************** Form Section **************** */
+
+/* ERRORS - paragraphs  */
+.required-error {
+    display: none;
+    width: 100%;
+    float: left;
+    margin: 0;
+    font-size: 15px;
+    color: red;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 0.5em;
 }
-*/
+
+#form-container {
+    min-height: 500px;
+    text-align: left;
+}
+
+/* Both sections:
+personal and product inputs  */
+.column_details {
+    width: 50%;
+    float: left;
+    padding: 15px;
+}
+
+.details_input {
+    overflow: auto;
+    padding: 10px 5px;
+}
 
 label {
-    clear: left;
-    width: 180px;
-    clear: left;
-    text-align: right;
-    padding-right: 25px;
-    padding-top: 10px;
-    font-size: 18px;
+    width: 40%;
+    font-weight: bold;
+    float: left;
 }
 
-/*
-form { 
-    text-align: left; display: inline-block; padding: 20px; width: auto;  background: #FAFAFA;
-}
-*/
-
-/*
-p {
-    margin-top: 1em;
-    margin-bottom: 0em;
-    position: sticky;
-    display: grid;
-}
-*/
-
-/*
-form {
-    display: block;
-        text-align: left;    
-}
-*/
-
-input[type=text],
-[type=tel] {
-    width: 20%;
-}
-
-.required-error {
-    color: mediumvioletred;
-    padding-left: 10px;
-}
-
-input[type=text],
-[type=tel],
-select,
-textarea {
-    padding: 12px 12px;
-    border-color: dimgrey;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
-input[type=submit] {
+input, textarea, select {
     width: 60%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    float: right;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.09);
+    border: 0;
+    padding: 10px;
+    border-radius: 0 0px;
 }
 
-/*
-input {
-    margin-bottom: 5px;
-}*/
+input:focus, textarea:focus, select:focus {
+    color: black;
+    font-size: 12px;
+    background-color: white;
+    outline-color: transparent;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
+    color: darkgrey;
+}
+
+.other-field {
+    margin-top: 10px;
+}
+
+textarea {
+    height: 100px;
+}
+
+#submit {
+    display: block;
+    float: right;
+    font-weight: bold;
+    color: white;
+    background-color: #790e10;
+    padding: 15px 25px;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}

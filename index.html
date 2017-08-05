@@ -3,70 +3,129 @@
     <head>
         <title>myInspirations Order Form</title>
         <meta name="description" content="Order Form">
+       
+        <!-- Favicon  -->
+        <link rel="icon" href="./flower_logo.png" type="image/x-icon">
+        
         <script src="validation.js"></script>
         <link rel="stylesheet" type="text/css" href="order_form.css">
     </head>
     <body>
-    <div id=parent-div>
-        <img src="flower_logo.png" alt="Logo" style="width:250px; height:110px;">
+        <div id=parent-div>
+        <!-- Top Image  -->
+        <img src="flower_logo.png" alt="Logo"> 
+<!--             style="width:250px; height:110px;">-->
+         
         <h1 id="mainheading">Order Form</h1>
-        <h2 id="subheading">Please enter your order details</h2>
-        <div>
-          <form method="post" action="formToEmail.php">
-            <div id="parent-name-id">
-              <label>Name:</label><input type="text" placeholder="Mo Bloggs" id="name" onblur="validateNameOnBlur(this.id)">
-                <p class="required-error" style="visibility:hidden">Error placeholder for name field</p>
-            </div>
-            <div id="parent-tel-id">
-              <label>Telephone:</label><input type="tel" placeholder="e.g. 07500 111 222" id="telephone" onblur="validateTelOnBlur(this.id)">
-                <p class="required-error" style="visibility: hidden">Error placeholder for telephone field</p>
-            </div>
-            <div id="parent-email-id">
-              <label>E-mail:</label><input type="text" placeholder="name@example.com" id="email" onblur="validateEmailOnBlur(this.id)">
-                <p class="required-error" style="visibility: hidden">Error placeholder for e-mail field</p>
-            </div>
+        <h2 id="subheading">Please Enter Your Order Details</h2>
+         
+        <div id="form-container">
+            <form>
+               
+                <!-- Left Column (Personal Details) -->
+                <section class="column_details">
+                  
+                  <!-- Name Field -->
+                  <div class="details_input" id="name-div">
+                    <label>Name:</label>
+                    <input type="text" placeholder="Mo Bloggs" id="name" onblur="validateNameOnBlur(this.id); capitaliseInput(this.id)" autofocus>
+                    <p class="required-error">Error placeholder for name field</p>
+                  </div>
 
-            <label>House Name/Number:</label> <input type="text" id="house-name"><br>
+                  <!-- Telephone Field -->
+                  <div class="details_input" id="phone-div">
+                    <label>Telephone:</label>
+                    <input type="tel" placeholder="e.g. 07500 111 222" id="telephone" onblur="validateTelOnBlur(this.id)">
+                    <p class="required-error">Error placeholder for telephone field</p>
+                  </div>
+                
+                  <!-- Email Field -->
+                  <div class="details_input" id="email-div">
+                    <label>E-mail Address:</label>
+                    <input type="email" placeholder="name@example.com" id="email" onblur="validateEmailOnBlur(this.id)">
+                    <p class="required-error">Error placeholder for e-mail field</p>
+                  </div>
+
+                  <!-- Address Field -->
+                  <div class="details_input" id="address-div">
+                    <label>House Name/Number:</label>
+                    <input type="text" id="house-name"><br>
+                  </div>
+
+                  <!-- First Line Address Field -->
+                  <div class="details_input">
+                    <label>First Line of Address:</label>
+                    <input type="text" id="first-address"><br>
+                  </div>
               
-            <label>First Line of Address:</label><input type="text" id="first-address"><br>
-              
-            <label>Second Line of Address:</label><input type="text" id="second-address">
-            <div id="parent-postcode-id">
-              <label>Postcode:</label><input type="text" placeholder="SW1A 1AA" id="postcode" onblur="validatePostcodeOnBlur(this.id)">
-                <p class="required-error" style="visibility: hidden">Error placeholder for postcode field</p>
-            </div>
-            <div>
-              <label>Product:</label><select id="product_list" onchange="otherOption(this.value)">
-                <option value="shake it frame">'Shake it' Frame</option>
-                <option value="small shake it frame">'Small 'Shake it' Frame</option>
-                <option value="canvas">Canvas</option>
-                <option value="mini canvas">Mini Canvas</option>
-                <option value="a4 canvas">A4 Canvas</option>
-                <option value="extra large canvas">Extra Large Canvas</option>
-                <option value="other">Other</option>
-                  <label>Other Product:</label><input class="other-field" type="text" placeholder="Please enter product details" id="other_product_details" style="visibility: hidden"><br>
-              </select>
-            </div>
+                  <!-- Second Line Address Field -->
+                  <div class="details_input">
+                    <label>Second Line of Address:</label>
+                    <input type="text" id="second-address">
+                  </div>
+                    
+                  <!-- Postcode Field  -->
+                  <div class="details_input" id="postcode-div">
+                    <label>Postcode:</label>
+                    <input type="text" placeholder="SW1A 1AA" id="postcode" onblur="validatePostcodeOnBlur(this.id)">
+                    <p class="required-error">Error placeholder for postcode field</p>
+                  </div>
+                </section>
             
-            <div>
-              <label>Order Description:</label><br><textarea rows="8" cols="50"></textarea>
-            </div>
+                <!-- Right Column (Product Details) -->
+                <section class="column_details">
+                  <!-- Products Field -->
+                  <div class="details_input" id="products-div">
+                    <label>Product:</label>
+                    <select id="product_list" onchange="otherOption(this.value)">
+                      <option value="shake it frame">'Shake it' Frame</option>
+                      <option value="small shake it frame">'Small 'Shake it' Frame</option>
+                      <option value="canvas">Canvas</option>
+                      <option value="mini canvas">Mini Canvas</option>
+                      <option value="a4 canvas">A4 Canvas</option>
+                      <option value="extra large canvas">Extra Large Canvas</option>
+                      <option value="other">Other</option>
+
+                      <label>Other Product:</label>
+                      <input class="other-field" type="text" placeholder="Please enter product details" id="other_product_details" style="visibility: hidden"><br>
+                    </select>
+                  </div>
             
-            <div>
-              <label>Delivery Timescale</label><select   id="delivery-timescale">
-                <option value="one week">1 Week</option>
-                <option value="two weeks">1-2 Weeks</option>
-                <option value="three weeks">2-3 Weeks</option>
-                <option value="four weeks">3-4 Weeks</option>
-              </select>
-            </div>
-            <div>
-              <label>Additional Notes:</label><br><textarea rows="5" cols="50"></textarea>
-            </div>
+                  <!-- Description Field -->
+                  <div class="details_input" id="description-div">
+                    <label>Order Description:</label>
+                    <textarea rows="8" cols="50"></textarea>
+                  </div>
+                    
+                  <!-- Quote Field -->
+                  <div class="details_input" id="quote-div">
+                    <label>Name or Quote:</label>
+                    <input type="text" id="quote">
+                  </div>
+
+                  <!-- Estimated Delivery Field -->
+                  <div class="details_input" id="estimate-delivery-div">
+                    <label>Delivery Timescale</label>
+                    <select id="delivery-timescale">
+                      <option value="one week">1 Week</option>
+                      <option value="two weeks">1-2 Weeks</option>
+                      <option value="three weeks">2-3 Weeks</option>
+                      <option value="four weeks">3-4 Weeks</option>
+                    </select>
+                  </div>
             
-            <input type="submit" value="Submit Order" name="submit" id="submit">
+                  <!-- Additional Notes Field  -->
+                  <div class="details_input" id="additional-notes-div">
+                    <label>Additional Notes:</label>
+                    <textarea rows="5" cols="50"></textarea>
+                  </div>
+            
+                  <!-- Submit Button  -->
+                  <button type="submit" value="Submit Order" name="submit" id="submit"></button>
+                
+                </section>
             </form>
+        </div>            
         </div>
-    </div>
     </body>
 </html>
