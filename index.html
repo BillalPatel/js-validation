@@ -13,84 +13,74 @@
     <body>
         <div id=parent-div>
         <!-- Top Image  -->
-        <img src="flower_logo.png" alt="Logo"> 
-<!--             style="width:250px; height:110px;">-->
+        <img id="logo" src="flower_logo.png" alt="Logo"> 
          
         <h1 id="mainheading">Order Form</h1>
         <h2 id="subheading">Please Enter Your Order Details</h2>
          
         <div id="form-container">
-            <form>
-               
+            <form name="theform">
+
                 <!-- Left Column (Personal Details) -->
                 <section class="column_details">
                   
                   <!-- Name Field -->
                   <div class="details_input" id="name-div">
                     <label>Name:</label>
-                    <input type="text" placeholder="Mo Bloggs" id="name" onblur="validateNameOnBlur(this.id); capitaliseInput(this.id)" autofocus>
+                    <input type="text" placeholder="Mo Bloggs" id="name" onblur="validateName(this.id); capitaliseInput(this.id); enableSubmitButton()" autofocus>
                     <p class="required-error">Error placeholder for name field</p>
                   </div>
-
+                    
                   <!-- Telephone Field -->
                   <div class="details_input" id="phone-div">
                     <label>Telephone:</label>
-                    <input type="tel" placeholder="e.g. 07500 111 222" id="telephone" onblur="validateTelOnBlur(this.id)">
+                    <input type="tel" placeholder="e.g. 07500 111 222" id="telephone" onblur="validateTelephone(this.id)">
                     <p class="required-error">Error placeholder for telephone field</p>
                   </div>
                 
                   <!-- Email Field -->
                   <div class="details_input" id="email-div">
                     <label>E-mail Address:</label>
-                    <input type="email" placeholder="name@example.com" id="email" onblur="validateEmailOnBlur(this.id)">
+                    <input type="email" placeholder="name@example.com" id="email" onblur="validateEmail(this.id); capitaliseInput(this.id)">
                     <p class="required-error">Error placeholder for e-mail field</p>
                   </div>
 
                   <!-- Address Field -->
                   <div class="details_input" id="address-div">
                     <label>House Name/Number:</label>
-                    <input type="text" id="house-name"><br>
+                    <input type="text" id="house-name" onblur="capitaliseInput(this.id)"><br>
                   </div>
 
                   <!-- First Line Address Field -->
                   <div class="details_input">
                     <label>First Line of Address:</label>
-                    <input type="text" id="first-address"><br>
+                    <input type="text" id="first-address" onblur="capitaliseInput(this.id)"><br>
                   </div>
               
                   <!-- Second Line Address Field -->
                   <div class="details_input">
                     <label>Second Line of Address:</label>
-                    <input type="text" id="second-address">
+                    <input type="text" id="second-address" onblur="capitaliseInput(this.id)">
                   </div>
                     
                   <!-- Postcode Field  -->
                   <div class="details_input" id="postcode-div">
                     <label>Postcode:</label>
-                    <input type="text" placeholder="SW1A 1AA" id="postcode" onblur="validatePostcodeOnBlur(this.id)">
+                    <input type="text" placeholder="SW1A 1AA" id="postcode" onblur="validatePostcode(this.id); capitaliseInput(this.id)">
                     <p class="required-error">Error placeholder for postcode field</p>
                   </div>
                 </section>
             
                 <!-- Right Column (Product Details) -->
                 <section class="column_details">
-                  <!-- Products Field -->
-                  <div class="details_input" id="products-div">
-                    <label>Product:</label>
-                    <select id="product_list" onchange="otherOption(this.value)">
-                      <option value="shake it frame">'Shake it' Frame</option>
-                      <option value="small shake it frame">'Small 'Shake it' Frame</option>
-                      <option value="canvas">Canvas</option>
-                      <option value="mini canvas">Mini Canvas</option>
-                      <option value="a4 canvas">A4 Canvas</option>
-                      <option value="extra large canvas">Extra Large Canvas</option>
-                      <option value="other">Other</option>
 
-                      <label>Other Product:</label>
-                      <input class="other-field" type="text" placeholder="Please enter product details" id="other_product_details" style="visibility: hidden"><br>
-                    </select>
+                  <!-- Products Fields -->
+                  <div>
+                    <input type="text" id="qty-of-products" name="number_of_products" value="">Quantity of Products
+                    <button type="button" id="qty" onclick="addQtyFields()">Confirm</button>
+                    <div id="products-container"/>
                   </div>
-            
+
                   <!-- Description Field -->
                   <div class="details_input" id="description-div">
                     <label>Order Description:</label>
@@ -102,15 +92,21 @@
                     <label>Name or Quote:</label>
                     <input type="text" id="quote">
                   </div>
+                    
+                  <!-- Price Field -->
+                  <div class="details_input" id="price-div">
+                    <label>Price:</label>
+                    <input type="text" id="price">
+                  </div>
 
                   <!-- Estimated Delivery Field -->
                   <div class="details_input" id="estimate-delivery-div">
                     <label>Delivery Timescale</label>
                     <select id="delivery-timescale">
-                      <option value="one week">1 Week</option>
-                      <option value="two weeks">1-2 Weeks</option>
-                      <option value="three weeks">2-3 Weeks</option>
-                      <option value="four weeks">3-4 Weeks</option>
+                      <option>1 Week</option>
+                      <option>1-2 Weeks</option>
+                      <option>2-3 Weeks</option>
+                      <option>3-4 Weeks</option>
                     </select>
                   </div>
             
@@ -121,7 +117,10 @@
                   </div>
             
                   <!-- Submit Button  -->
-                  <button type="submit" value="Submit Order" name="submit" id="submit"></button>
+                  <button type="submit" id="submit" disabled>Submit Order</button>
+                    
+                  <!-- Reset Button  -->
+                  <button type="reset" id="reset">Reset Form</button>
                 
                 </section>
             </form>

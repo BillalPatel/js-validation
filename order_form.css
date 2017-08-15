@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Didact Gothic');
 
 * {
     box-sizing: border-box;
@@ -7,9 +8,9 @@
 body {
     width: 100%;
     min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Didact Gothic', sans-serif;
 /*    background: linear-gradient(#e6e6e6, #bb6b70);*/
-    background: #FFFAF0;
+    background: #FDFDFD;
     margin: 0;
     padding: 20px;
 }
@@ -31,8 +32,8 @@ body::-webkit-scrollbar-thumb
 {
 	background-color: #790e10;
 }
-/*  -----------------------------------------  */
 
+/*  -----------------------------------------  */
 
 #parent-div {
     position: relative;
@@ -41,16 +42,17 @@ body::-webkit-scrollbar-thumb
     text-align: center;
     overflow: auto;
 }
- /* add id to image in case you ass more images to the page  */
-img {
+
+#logo {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 180px;
+    top: 15px;
+    left: 20px;
+    width: 170px;
 }
 
 h1, h2 {
     color: #790e10;
+    margin-bottom: inherit;
 }
 
 /* **************** Form Section **************** */
@@ -84,6 +86,15 @@ personal and product inputs  */
 .details_input {
     overflow: auto;
     padding: 10px 5px;
+}
+
+#qty-of-products {
+    width: 50px;
+    float: center;
+}
+
+.appended-field {
+    margin-top: 15px;
 }
 
 label {
@@ -130,10 +141,26 @@ textarea {
     display: block;
     float: right;
     font-weight: bold;
+    font-size: 14px;
+    margin-top: 8px;
     color: white;
     background-color: #790e10;
     padding: 15px 25px;
     border: 0;
-    border-radius: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: inherit;
+}
+
+#reset {
+    display: block;
+    float: inherit;
+    font-size: 12px;
+    margin-top: 20px;
+    color: white;
+    background-color: dimgrey;
+    padding: 5px 25px;
+    border: 0;
+    border-radius: 6px;
     cursor: pointer;
 }
