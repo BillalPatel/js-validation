@@ -77,13 +77,13 @@ h1, h2 {
 
 /* Both sections:
 personal and product inputs  */
-.column_details {
+.column-details {
     width: 50%;
     float: left;
     padding: 15px;
 }
 
-.details_input {
+.details-input {
     overflow: auto;
     padding: 10px 5px;
 }

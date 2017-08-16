@@ -99,7 +99,7 @@ function addQtyFields() {
         container.removeChild(container.lastChild);
     }
     
-    for (i=0; i<number; i++){
+    for (i=0; i<number; i++) {
         var product = document.createElement("input");
             product.type = "text";
             product.className = "appended-field";
@@ -112,14 +112,13 @@ function addQtyFields() {
             nameOrQuote.className = "appended-field";
             nameOrQuote.placeholder = "Name or Quote";
             container.appendChild(nameOrQuote);
-            container.appendChild(document.createElement("br"));            
-        
+            container.appendChild(document.createElement("br"));   
         var price = document.createElement("input");
             price.type = "text";
             price.className = "appended-field";
             price.placeholder = "Price";
             container.appendChild(price);
-            container.appendChild(document.createElement("br"));    
+            container.appendChild(document.createElement("br")); 
     }
 }
 
