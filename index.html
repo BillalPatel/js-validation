@@ -19,7 +19,7 @@
         <h2 id="subheading">Please Enter Your Order Details</h2>
          
         <div id="form-container">
-            <form name="theform">
+            <form name="theform" action="confirmation.html">
 
                 <!-- Left Column (Personal Details) -->
                 <section class="column-details">
@@ -86,18 +86,6 @@
                     <label>Order Description:</label>
                     <textarea rows="8" cols="50"></textarea>
                   </div>
-                
-                  <!-- Quote Field -->
-                  <div class="details-input" id="quote-div">
-                    <label>Name or Quote:</label>
-                    <input type="text" id="quote">
-                  </div>
-                    
-                  <!-- Price Field -->
-                  <div class="details-input" id="price-div">
-                    <label>Price:</label>
-                    <input type="text" id="price">
-                  </div>
 
                   <!-- Estimated Delivery Dropdown -->
                   <div class="details-input" id="estimate-delivery-div">
@@ -117,7 +105,7 @@
                   </div>
             
                   <!-- Submit Button  -->
-                  <div> <button type="submit" id="submit" disabled>Submit Order</button>
+                  <div> <button type="submit" value="Submit" id="submit">Submit Order</button>
                   </div>
                     
                   <!-- Reset Button  -->

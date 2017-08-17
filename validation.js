@@ -3,10 +3,6 @@ var telRegEx = /^(?:[0-9 ]+$)/;
 var emailRegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 var postcodeRegExp = /([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))\s?[0-9][A-Za-z]{2})/;
 
-//window.onload = function () {
-//    document.getElementById('submit').disabled = true;
-//}
-
 function validateName(id) {
     var field = document.getElementById(id).value;
     var getParentDiv = document.getElementById("name-div");
@@ -19,10 +15,10 @@ function validateName(id) {
     } else if (!nameRegEx.test(field)) {
         pTag[0].style.display = "block";
         pTag[0].innerHTML = "Only letters are accepted within the name field.";
-//        return false;
+        return false;
     } else if (nameRegEx.test(field)) {
         pTag[0].style.display = "none";
-//        return true;
+        return true;
     }
 }
 
@@ -111,37 +107,16 @@ function addQtyFields() {
             nameOrQuote.type = "text";
             nameOrQuote.className = "appended-field";
             nameOrQuote.placeholder = "Name or Quote";
+            nameOrQuote.required = true;
             container.appendChild(nameOrQuote);
             container.appendChild(document.createElement("br"));   
+        
         var price = document.createElement("input");
             price.type = "text";
             price.className = "appended-field";
             price.placeholder = "Price";
+            price.required = true;
             container.appendChild(price);
             container.appendChild(document.createElement("br")); 
     }
 }
-
-function enableSubmitButton() {
-    if (validateName() = true) {
-//        document.getElementById('submit').disabled = true;
-        document.getElementById("submit").hasAttribute("enabled");
-    }
-}
-
-//function enableSubmitButton() {
-//    var button = document.getElementById("submit");
-//    
-//    
-//    
-//    var f = document.forms["theform"].elements;
-//    var cansubmit = true;
-//
-//    for (var i = 0; i < f.length; i++) {
-//        if (f[i].value.length == 0)
-//            cansubmit = false;
-//    }
-//
-//    document.getElementById('submit').disabled = !cansubmit;
-//}
-//window.onload = checkform;
